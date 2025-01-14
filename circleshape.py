@@ -18,3 +18,10 @@ class CircleShape(pygame.sprite.Sprite):
     def udpate(self, dt):
         # sub-classes must override
         pass 
+
+    def check_collision(self, other_object):
+        if self.position.distance_to(other_object.position) <= self.radius + other_object.radius:
+            return True 
+        return False 
+
+
